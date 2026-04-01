@@ -1,7 +1,9 @@
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("========================================");
-        System.out.println("UC7 - Sort Bogies by Capacity (Comparator)");
+        System.out.println("UC8 - Filter Passenger Bogies Using Streams");
         System.out.println("========================================");
         System.out.println();
 
@@ -12,19 +14,22 @@ public class Main {
         train.addBogie(new Bogie("First Class", 24));
         train.addBogie(new Bogie("General", 90));
 
-        System.out.println("Before Sorting:");
+        System.out.println("All Bogies:");
         for (Bogie bogie : train.getBogies()) {
             System.out.println(bogie);
         }
         System.out.println();
 
-        train.getBogies().sort(Bogie.byCapacity());
+        List<Bogie> filteredBogies = train.getBogies()
+                .stream()
+                .filter(bogie -> bogie.getCapacity() > 60)
+                .toList();
 
-        System.out.println("After Sorting by Capacity:");
-        for (Bogie bogie : train.getBogies()) {
+        System.out.println("Filtered Bogies (Capacity > 60):");
+        for (Bogie bogie : filteredBogies) {
             System.out.println(bogie);
         }
         System.out.println();
-        System.out.println("UC7 sorting completed...");
+        System.out.println("UC8 filtering completed...");
     }
 }
