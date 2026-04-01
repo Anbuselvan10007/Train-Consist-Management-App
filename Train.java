@@ -1,34 +1,18 @@
-import java.util.LinkedList;
-import java.util.List;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class Train {
-    private final LinkedList<String> consist;
+    private final Set<String> formation;
 
     public Train() {
-        consist = new LinkedList<>();
+        formation = new LinkedHashSet<>();
     }
 
-    public void addFirstBogie(String bogie) {
-        consist.addFirst(bogie);
+    public void attachBogie(String bogie) {
+        formation.add(bogie);
     }
 
-    public void addLastBogie(String bogie) {
-        consist.addLast(bogie);
-    }
-
-    public void insertBogie(int index, String bogie) {
-        consist.add(index, bogie);
-    }
-
-    public void removeFirstBogie() {
-        consist.removeFirst();
-    }
-
-    public void removeLastBogie() {
-        consist.removeLast();
-    }
-
-    public List<String> getConsist() {
-        return consist;
+    public Set<String> getFormation() {
+        return formation;
     }
 }
