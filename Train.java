@@ -1,18 +1,34 @@
-import java.util.HashSet;
-import java.util.Set;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Train {
-    private final Set<String> bogieIds;
+    private final LinkedList<String> consist;
 
     public Train() {
-        bogieIds = new HashSet<>();
+        consist = new LinkedList<>();
     }
 
-    public void addBogieId(String bogieId) {
-        bogieIds.add(bogieId);
+    public void addFirstBogie(String bogie) {
+        consist.addFirst(bogie);
     }
 
-    public Set<String> getBogieIds() {
-        return bogieIds;
+    public void addLastBogie(String bogie) {
+        consist.addLast(bogie);
+    }
+
+    public void insertBogie(int index, String bogie) {
+        consist.add(index, bogie);
+    }
+
+    public void removeFirstBogie() {
+        consist.removeFirst();
+    }
+
+    public void removeLastBogie() {
+        consist.removeLast();
+    }
+
+    public List<String> getConsist() {
+        return consist;
     }
 }
