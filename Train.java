@@ -1,18 +1,18 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Train {
-    private final Map<String, Integer> capacityMap;
+    private final List<Bogie> bogies;
 
     public Train() {
-        capacityMap = new HashMap<>();
+        bogies = new ArrayList<>();
     }
 
-    public void addBogieCapacity(String bogie, int capacity) {
-        capacityMap.put(bogie, capacity);
+    public void addBogie(Bogie bogie) {
+        bogies.add(bogie);
     }
 
-    public Map<String, Integer> getCapacityMap() {
-        return capacityMap;
+    public List<Bogie> getBogies() {
+        return bogies;
     }
 }

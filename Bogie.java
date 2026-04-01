@@ -1,16 +1,28 @@
-public class Bogie {
-    private final String bogieId;
+import java.util.Comparator;
 
-    public Bogie(String bogieId) {
-        this.bogieId = bogieId;
+public class Bogie {
+    private final String name;
+    private final int capacity;
+
+    public Bogie(String name, int capacity) {
+        this.name = name;
+        this.capacity = capacity;
     }
 
-    public String getBogieId() {
-        return bogieId;
+    public String getName() {
+        return name;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public static Comparator<Bogie> byCapacity() {
+        return Comparator.comparingInt(Bogie::getCapacity);
     }
 
     @Override
     public String toString() {
-        return bogieId;
+        return name + " -> " + capacity;
     }
 }
