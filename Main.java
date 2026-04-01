@@ -1,24 +1,22 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println("UC5 - Preserve Insertion Order of Bogies");
+        System.out.println("========================================");
+        System.out.println("UC6 - Map Bogie to Capacity (HashMap)");
         System.out.println("========================================");
         System.out.println();
 
         Train train = new Train();
 
-        train.attachBogie("Engine");
-        train.attachBogie("Sleeper");
-        train.attachBogie("Cargo");
-        train.attachBogie("Guard");
-        train.attachBogie("Sleeper");
+        train.addBogieCapacity("Sleeper", 72);
+        train.addBogieCapacity("AC Chair", 56);
+        train.addBogieCapacity("First Class", 24);
+        train.addBogieCapacity("Cargo", 120);
 
-        System.out.println("Final Train Formation:");
-        System.out.println(train.getFormation());
+        System.out.println("Bogie Capacity Details:");
+        for (var entry : train.getCapacityMap().entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
         System.out.println();
-
-        System.out.println("Note:");
-        System.out.println("LinkedHashSet preserves insertion order and removes duplicates automatically.");
-        System.out.println();
-        System.out.println("UC5 formation setup completed...");
+        System.out.println("UC6 bogie-capacity mapping completed...");
     }
 }

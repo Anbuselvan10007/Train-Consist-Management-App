@@ -1,18 +1,18 @@
-import java.util.LinkedHashSet;
-import java.util.Set;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Train {
-    private final Set<String> formation;
+    private final Map<String, Integer> capacityMap;
 
     public Train() {
-        formation = new LinkedHashSet<>();
+        capacityMap = new HashMap<>();
     }
 
-    public void attachBogie(String bogie) {
-        formation.add(bogie);
+    public void addBogieCapacity(String bogie, int capacity) {
+        capacityMap.put(bogie, capacity);
     }
 
-    public Set<String> getFormation() {
-        return formation;
+    public Map<String, Integer> getCapacityMap() {
+        return capacityMap;
     }
 }
