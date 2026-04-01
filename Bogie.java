@@ -8,4 +8,9 @@ public class Bogie {
     public String getBogieId() {
         return bogieId;
     }
+
+    @Override
+    public String toString() {
+        return bogieId;
+    }
 }
