@@ -1,26 +1,18 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Train {
-    private final List<String> passengerBogies;
+    private final Set<String> bogieIds;
 
     public Train() {
-        passengerBogies = new ArrayList<>();
+        bogieIds = new HashSet<>();
     }
 
-    public void addPassengerBogie(String bogieType) {
-        passengerBogies.add(bogieType);
+    public void addBogieId(String bogieId) {
+        bogieIds.add(bogieId);
     }
 
-    public boolean removePassengerBogie(String bogieType) {
-        return passengerBogies.remove(bogieType);
-    }
-
-    public boolean hasPassengerBogie(String bogieType) {
-        return passengerBogies.contains(bogieType);
-    }
-
-    public List<String> getPassengerBogies() {
-        return passengerBogies;
+    public Set<String> getBogieIds() {
+        return bogieIds;
     }
 }
